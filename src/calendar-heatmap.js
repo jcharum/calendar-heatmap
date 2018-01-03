@@ -21,7 +21,9 @@ define(['d3', 'moment'], function (d3, moment) {
     /**
      * Initialize
      */
-    init: function(data, color, overview, handler) {
+    init: function(container, data, color, overview, handler) {
+
+      calendarHeatmap.container = container;
   
       // Set calendar data
       calendarHeatmap.data = data;
@@ -55,10 +57,7 @@ define(['d3', 'moment'], function (d3, moment) {
      * Create html elements for the calendar
      */
     createElements: function() {
-      // Create main html container for the calendar
-      var container = document.createElement('div');
-      container.className = 'calendar-heatmap';
-      document.body.appendChild(container);
+      var container = calendarHeatmap.container;
   
       // Create svg element
       var svg = d3.select(container).append('svg')

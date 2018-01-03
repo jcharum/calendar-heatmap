@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="dist/calendar-heatmap.min.css">
 </head>
 <body>
+  <div id="calendarContainer" class="calendar-heatmap"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js" charset="utf-8"></script>
 
@@ -55,8 +56,11 @@
         console.log(val);
       };
 
+      var container = document.getElementById('calendarContainer');
       // Initialize calendar heatmap
-      heatmap.init(example_data, color, overview, print);
+      heatmap.init(container, example_data, color, overview, print);
+
+      console.log("got it");
     });
   </script>
 </body>
